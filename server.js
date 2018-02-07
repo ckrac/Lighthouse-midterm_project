@@ -16,7 +16,7 @@ const knexLogger  = require('knex-logger');
 
 // Seperated Routes for each Resource
 const usersRoutes = require("./routes/users");
-const orderRoutes = require("./routes/order");
+// const orderRoutes = require("./views/order.ejs");
 
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
@@ -49,6 +49,7 @@ app.get("/", (req, res) => {
 app.get("/order", (req, res) => {
   res.render("order"); // render order page
 });
+
 
 // // Order Page Post
 // app.post("/order", (req, res) => {
