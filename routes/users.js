@@ -14,5 +14,15 @@ module.exports = (knex) => {
     });
   });
 
+	router.get("/", (req, res) => {
+	    knex
+	      .select("name, price, desc")
+	      .from("menu")
+	      .then((results) => {
+	        res.json(results);
+	    });
+	  });
   return router;
 }
+
+
