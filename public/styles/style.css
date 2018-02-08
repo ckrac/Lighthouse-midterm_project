@@ -122,34 +122,4 @@ main .order .finalprice button {
   height: 70px;
   width: 150px;
 }
-
-aside {
-  height: 80vh;
-  background: cyan;
-}
-
-aside .sectionwhole {
-  background: orange;
-}
-
-aside .sectionwhole section {
-  background: lightgreen;
-  margin: 10px 0;
-}
-
-aside .sectionwhole section p {
-  margin-bottom: 10px;
-}
-
-aside .sectionwhole section span {
-  font-size: 40px;
-  cursor: pointer;
-}
-
-aside .sectionwhole button {
-  height: 50px;
-  width: 150px;
-  margin-top: 10px;
-  cursor: pointer;
-}
 /*# sourceMappingURL=style.css.map */
