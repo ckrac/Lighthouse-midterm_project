@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -6,6 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <link rel="stylesheet" href="styles/style.css" type="text/css">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
   <title>Order</title>
 </head>
 <body>
@@ -20,40 +22,119 @@
   </nav>
 
   <main>
+  <div class="orderwrapper">
     <section>
-      <span id="increment">+</span>
-      <span id="decrement">_</span>
-      <h1>Pasta</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi aliquid molestias maxime sit? Iure, adipisci? Quam ut fugiat, quidem distinctio necessitatibus doloremque illum? Voluptate fugit dignissimos dolores a, hic aliquid?</p>      
-      <p>$50</p>
+      <div class="amount">
+        <i class="fas fa-chevron-up"></i>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="item">
+        <h1>Pasta</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi aliquid molestias maxime sit? Iure, adipisci? Quam ut fugiat, quidem distinctio necessitatibus doloremque illum? Voluptate fugit dignissimos dolores a, hic aliquid?</p>      
+        <p class="price">$50</p>
+      </div>
     </section>
-    
-    <section>
-      <span id="increment">+</span>
-      <span id="decrement">_</span>
-      <h1>Lobster</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita commodi rem quasi ipsa unde, aliquid reprehenderit in repellendus porro vel nam officiis neque quo aut dolores. Dolore maiores ullam ipsam?</p>      
-      <p>$50</p>
-    </section>
-      
-    <section>
-      <span id="increment">+</span>
-      <span id="decrement">_</span>
-      <h1>Cheese</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est officiis soluta laudantium eligendi expedita nam veniam ex, in nisi doloribus molestias modi exercitationem quibusdam sunt numquam? Dolore harum voluptatibus nemo.</p>      
-      <p>$50</p>
-    </section>
-    
-    <section>
-      <span id="increment">+</span>
-      <span id="decrement">_</span>
-      <h1>Bread</h1>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis adipisci iusto facere, fugit nesciunt ex tempora illo tenetur, autem quae corporis modi quibusdam veritatis rerum enim libero voluptatem nostrum quasi!</p>      
-      <p>$50</p>
-    </section>
-  </main>
 
-  <aside>
+    <section>
+        <div class="amount">
+          <i class="fas fa-chevron-up"></i>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="item">
+          <h1>Pasta</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi aliquid molestias maxime sit? Iure, adipisci? Quam ut fugiat, quidem distinctio necessitatibus doloremque illum? Voluptate fugit dignissimos dolores a, hic aliquid?</p>      
+          <p class="price">$50</p>
+        </div>
+      </section>
+
+      <section>
+          <div class="amount">
+            <i class="fas fa-chevron-up"></i>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="item">
+            <h1>Pasta</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi aliquid molestias maxime sit? Iure, adipisci? Quam ut fugiat, quidem distinctio necessitatibus doloremque illum? Voluptate fugit dignissimos dolores a, hic aliquid?</p>      
+            <p class="price">$50</p>
+          </div>
+        </section>
+    
+        <section>
+            <div class="amount">
+              <i class="fas fa-chevron-up"></i>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="item">
+              <h1>Pasta</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi aliquid molestias maxime sit? Iure, adipisci? Quam ut fugiat, quidem distinctio necessitatibus doloremque illum? Voluptate fugit dignissimos dolores a, hic aliquid?</p>      
+              <p class="price">$50</p>
+            </div>
+        </section>
+    </div>
+
+    <div class="order">
+      <p>Your order</p>
+      <div class="menusection">
+        <div class="menuicons">
+          <i class="fas fa-chevron-up"></i>
+          <p>1</p>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        
+        <div class="menuitem">
+          <p>cheese</p>
+          <p>Total: $20</p>
+        </div>
+        
+        <div class="totalprice">
+          <i class="fas fa-trash"></i>                    
+        </div>
+      </div>
+
+      <div class="menusection">
+          <div class="menuicons">
+            <i class="fas fa-chevron-up"></i>
+            <p>1</p>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          
+          <div class="menuitem">
+            <p>cheese</p>
+            <p>Total: $20</p>
+          </div>
+          
+          <div class="totalprice">
+            <i class="fas fa-trash"></i>                    
+          </div>
+        </div>
+
+        <div class="menusection">
+            <div class="menuicons">
+              <i class="fas fa-chevron-up"></i>
+              <p>1</p>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            
+            <div class="menuitem">
+              <p>cheese</p>
+              <p>Total: $20</p>
+            </div>
+            
+            <div class="totalprice">
+              <i class="fas fa-trash"></i>                    
+            </div>
+          </div>
+
+          <div class="finalprice">
+              <p>Total: $60</p>
+              <button>Confirm Order</button>
+          </div>
+
+    </div>
+
+    </main>
+
+  <!-- <aside>
     <div class="sectionwhole">
       <h1>Your Order</h1>    
     
@@ -87,7 +168,7 @@
       <h2>Total: $30 buck</h2>
       <button>Place Order</button>
     </div>
-  </aside>
+  </aside> -->
 
 </body>
 </html>
