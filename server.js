@@ -51,10 +51,10 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
-// // Order Page
-// app.get("/order", (req, res) => {
-//   res.render("order"); // render order page
-// });
+// Order Page
+app.get("/order", (req, res) => {
+  res.render("order"); // render order page
+});
 
 
 // // Order Page Post
@@ -67,10 +67,10 @@ app.get("/", (req, res) => {
 //   res.render("confirm"); // render comirm page
 // });
 
-//Order Page
-app.get("/order", (req, res) => {
-  res.render("order/index");
-});
+// //Order Page
+// app.get("/order", (req, res) => {
+//   res.render("order/index");
+// });
 
 app.listen(PORT, () => {
   console.log("Example app listening on port " + PORT);

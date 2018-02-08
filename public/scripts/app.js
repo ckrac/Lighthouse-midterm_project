@@ -23,14 +23,14 @@
 const createMenuItem = (menuObj) => {
 
   let $menuItem = $(`
-  <section>
-      <div class="amount">
-        <i class="fas fa-chevron-up"></i>
-        <i class="fas fa-chevron-down"></i>
-      </div>
+    <section>
+        <div class="amount">
+          <i class="fas fa-chevron-up"></i>
+          <i class="fas fa-chevron-down"></i>
+        </div>
       <div class="item">
         <h1>${menuObj.name}</h1>
-        <p>${menuObj.description}</p>
+        <p class="food">${menuObj.description}</p>
         <p class="price">${menuObj.price}</p>
       </div>
     </section>
@@ -44,7 +44,7 @@ const createMenuItem = (menuObj) => {
       // calls createMenuItem for each menuItem
       let $menuItem = createMenuItem(item);
       // takes return value and appends it to the menu container
-      $('main').append($menuItem);
+      $('.orderwrapper').append($menuItem);
     }
   }
 
