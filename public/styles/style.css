@@ -81,6 +81,7 @@ main .order .menusection .menuicons {
   width: 20%;
   justify-content: center;
   align-items: center;
+<<<<<<< HEAD
 }
 
 main .order .menusection .menuicons .fa-chevron-up, main .order .menusection .menuicons .fa-chevron-down {
@@ -121,35 +122,47 @@ main .order .finalprice p {
 main .order .finalprice button {
   height: 70px;
   width: 150px;
+=======
+>>>>>>> html-structure
 }
 
-aside {
-  height: 80vh;
-  background: cyan;
+main .order .menusection .menuicons .fa-chevron-up, main .order .menusection .menuicons .fa-chevron-down {
+  margin: 5px 0;
 }
 
-aside .sectionwhole {
-  background: orange;
+main .order .menusection .menuitem {
+  background: purple;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
-aside .sectionwhole section {
-  background: lightgreen;
-  margin: 10px 0;
+main .order .menusection .totalprice {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: pink;
+  flex-direction: column;
 }
 
-aside .sectionwhole section p {
-  margin-bottom: 10px;
+main .order .finalprice {
+  background: yellow;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-aside .sectionwhole section span {
-  font-size: 40px;
-  cursor: pointer;
+main .order .finalprice p {
+  height: 30%;
 }
 
-aside .sectionwhole button {
-  height: 50px;
+main .order .finalprice button {
+  height: 70px;
   width: 150px;
-  margin-top: 10px;
-  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */
