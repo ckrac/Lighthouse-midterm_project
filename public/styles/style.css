@@ -1,78 +1,145 @@
+@import url("https://fonts.googleapis.com/css?family=Dosis:300,400");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   list-style: none;
+  font-family: 'Dosis', sans-serif;
+}
+
+body {
+  margin: 0 100px;
 }
 
 nav {
   width: 100%;
-  background: red;
+  height: 100px;
   display: flex;
+  align-items: center;
 }
 
 nav h1 {
-  background: blue;
+  width: 50vw;
+  font-size: 30px;
+}
+
+nav ul {
+  width: 50vw;
+  display: flex;
+  justify-content: flex-end;
 }
 
 nav ul li {
-  display: inline-block;
+  padding: 0 10px;
+  font-size: 20px;
 }
 
 main {
-  background: blue;
   display: flex;
-  flex-direction: column;
-  text-align: center;
+  height: 80vh;
+  border-top: 0.1px solid black;
 }
 
 main section {
-  width: 80%;
-  background: green;
-}
-
-main section span {
-  font-size: 40px;
-  margin: 0 10px;
-  cursor: pointer;
-}
-
-main section h1 {
+  display: flex;
   margin-top: 10px;
+  height: 20%;
 }
 
-main section p {
-  font-size: 20px;
-  margin-top: 10px;
+main section .amount {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-aside {
-  height: 80vh;
-  background: cyan;
-}
-
-aside .sectionwhole {
-  background: orange;
-}
-
-aside .sectionwhole section {
-  background: lightgreen;
+main section .amount .fa-chevron-up, main section .amount .fa-chevron-down {
   margin: 10px 0;
 }
 
-aside .sectionwhole section p {
-  margin-bottom: 10px;
+main section .item {
+  padding: 0 150px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-aside .sectionwhole section span {
-  font-size: 40px;
-  cursor: pointer;
+main section .item .food {
+  margin: 10px 0;
 }
 
-aside .sectionwhole button {
-  height: 50px;
-  width: 150px;
+main section .item .price {
+  font-size: 20px;
+}
+
+main .order {
+  border-left: 0.1px solid black;
+  border-bottom: 0.1px solid black;
+  width: 30%;
+}
+
+main .order #customerorder {
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+}
+
+main .order .menusection {
+  display: flex;
+  height: 15%;
   margin-top: 10px;
-  cursor: pointer;
+}
+
+main .order .menusection .menuicons {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  justify-content: center;
+  align-items: center;
+}
+
+main .order .menusection .menuicons .fa-chevron-up, main .order .menusection .menuicons .fa-chevron-down {
+  margin: 5px 0;
+}
+
+main .order .menusection .menuitem {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+main .order .menusection .totalprice {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+main .order .finalprice {
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main .order .finalprice p {
+  height: 30%;
+}
+
+main .order .finalprice button {
+  height: 50px;
+  width: 200px;
+  border-radius: 25px;
+  background: none;
+  border: 1px solid black;
 }
 /*# sourceMappingURL=style.css.map */
