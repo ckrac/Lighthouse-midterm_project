@@ -57,10 +57,36 @@ app.get("/order", (req, res) => {
 });
 
 
-// // Order Page Post
-// app.post("/order", (req, res) => {
-//   res.render("order"); //
-// });
+// Order Page Post
+app.post("/order", (req, res) => {
+  res.render("order"); //
+});
+
+
+app.post("/test", (req, res) => {
+  const orders = req.body;
+  console.log(orders);
+  const item1 = orders['1'];
+  const item1 = orders['2'];
+  const item1 = orders['3'];
+  const item1 = orders['4'];
+  const item1 = orders['5'];
+  console.log(item1);
+  // const item1 = orders.1;
+  // console.log(item1)
+//   knex('placeOrder').insert({customer_id: '1'})
+//   .then(knex('placeOrder').insert({order id: 3 menu_id: 1, quantity: item1})
+//     .then(knex('placeOrder').insert({order id: 3 menu_id: 1, quantity: item1})
+
+// .then(knex('placeOrder').insert({order id: 3 menu_id: 1, quantity: item1})
+// .then(knex('placeOrder').insert({order id: 3 menu_id: 1, quantity: item1})
+
+// )
+
+  // console.log(orders);
+  // for (let item in orders) {
+  //   console.log(orders[item]);
+  });
 
 // // Confirm Order Page
 // app.get("/order/confirm", (req, res) => {
