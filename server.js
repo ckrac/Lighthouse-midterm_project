@@ -14,6 +14,21 @@ const knex        = require("knex")(knexConfig[ENV]);
 const morgan      = require('morgan');
 const knexLogger  = require('knex-logger');
 
+//Twilio Setup
+const twilioAccount = require("./send_sms.js");
+const accountSid = 'AC84a760b7d1f0d10785b2329131cc8cc9';
+const authToken = '88c07a20c9cc2b2434fe293281f0a852';
+// require the Twilio module and create a REST client
+const client = require('twilio')(accountSid, authToken);
+
+// client.messages
+//  .create({
+//    to: '+16477741151',
+//    from: '+16479313771',
+//    body: 'This is the ship that made the Kessel Run in fourteen parsecs?',
+//  })
+//  .then(message => console.log(message.sid));
+
 // Seperated Routes for each Resource
 const usersRoutes = require("./routes/users");
 const menuRoutes = require("./routes/1menu");
@@ -97,15 +112,26 @@ app.post("/test", (req, res) => {
   })
   .then ( (placeOrderID) => {
     console.log(placeOrderID);
-    return knex('orderList')
+    knex('orderList')
       .insert([{placeOrder_id: placeOrderID, menu_id: 1, quantity: item1},
         {placeOrder_id: placeOrderID, menu_id: 2, quantity: item2},
         {placeOrder_id: placeOrderID, menu_id: 3, quantity: item3},
         {placeOrder_id: placeOrderID, menu_id: 4, quantity: item4},
         {placeOrder_id: placeOrderID, menu_id: 5, quantity: item5}
         ])
+    return placeOrderID
   })
-
+  .then ( (placeOrder_id) => {
+    console.log('end', placeOrder_id);
+    client.messages
+      .create({
+         to: '+16477741151',
+         from: '+16479313771',
+         body: `OrderId: ${placeOrder_id}
+          Fries: ${item1} Burger: ${item2} Pizza: ${item3} MilkShake: ${item4} Soda: ${item5}`,
+       })
+       .then(message => console.log(message.sid));
+  });
 });
 
 // // Confirm Order Page
