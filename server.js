@@ -66,27 +66,47 @@ app.post("/order", (req, res) => {
 app.post("/test", (req, res) => {
   const orders = req.body;
   console.log(orders);
+  // Set known menu items to quantity
   const item1 = orders['1'];
-  const item1 = orders['2'];
-  const item1 = orders['3'];
-  const item1 = orders['4'];
-  const item1 = orders['5'];
-  console.log(item1);
-  // const item1 = orders.1;
-  // console.log(item1)
-//   knex('placeOrder').insert({customer_id: '1'})
-//   .then(knex('placeOrder').insert({order id: 3 menu_id: 1, quantity: item1})
-//     .then(knex('placeOrder').insert({order id: 3 menu_id: 1, quantity: item1})
+  const item2 = orders['2'];
+  const item3 = orders['3'];
+  const item4 = orders['4'];
+  const item5 = orders['5'];
+  // Find set customer id
+  knex('customer')
+    .select("id")
+    .from("customer")
+    .where('id', 2)
+  .then( (customer) => {
+    let customerid = customer[0].id;
+    console.log(customer[0].id);
+    return new Promise ( (resolve, reject) => {
+      if (!customerid) {
+        reject ();
+      } else {
+        // insert a new placeOrder id using customers id
+        knex('placeOrder')
+          .insert({customer_id: customerid})
+          .returning('id')
+          .then( (placeOrderID) => {
+            // console.log(placeOrderID[0]);
+            resolve(placeOrderID[0]);
+          })
+      }
+    })
+  })
+  .then ( (placeOrderID) => {
+    console.log(placeOrderID);
+    return knex('orderList')
+      .insert([{placeOrder_id: placeOrderID, menu_id: 1, quantity: item1},
+        {placeOrder_id: placeOrderID, menu_id: 2, quantity: item2},
+        {placeOrder_id: placeOrderID, menu_id: 3, quantity: item3},
+        {placeOrder_id: placeOrderID, menu_id: 4, quantity: item4},
+        {placeOrder_id: placeOrderID, menu_id: 5, quantity: item5}
+        ])
+  })
 
-// .then(knex('placeOrder').insert({order id: 3 menu_id: 1, quantity: item1})
-// .then(knex('placeOrder').insert({order id: 3 menu_id: 1, quantity: item1})
-
-// )
-
-  // console.log(orders);
-  // for (let item in orders) {
-  //   console.log(orders[item]);
-  });
+});
 
 // // Confirm Order Page
 // app.get("/order/confirm", (req, res) => {
