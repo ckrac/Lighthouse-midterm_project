@@ -1,10 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Dosis:300,400");
+@import url("https://fonts.googleapis.com/css?family=Quicksand");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   list-style: none;
-  font-family: 'Dosis', sans-serif;
+  font-family: 'Quicksand', sans-serif;
 }
 
 body {
@@ -34,97 +35,80 @@ nav ul li {
   font-size: 20px;
 }
 
-main {
-  display: flex;
-  height: 80vh;
-  border-top: 0.1px solid black;
-}
-
-main section {
-  display: flex;
-  margin-top: 10px;
-  height: 20%;
-}
-
-main section .amount {
-  width: 20%;
+.amount {
+  width: 30%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-main section .amount .fa-chevron-up, main section .amount .fa-chevron-down {
-  margin: 10px 0;
+input {
+  height: 50px;
+  width: 200px;
+  border-radius: 25px;
+  border: 0.5px solid black;
+  background: none;
 }
 
-main section .item {
+::placeholder {
+  font-size: 15px;
+  padding: 10px;
+  color: black;
+}
+
+.item {
   padding: 0 150px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 150px;
 }
 
-main section .item .food {
+.food {
   margin: 10px 0;
 }
 
-main section .item .price {
+.price {
   font-size: 20px;
+}
+
+main {
+  display: flex;
+  height: 80vh;
+  border-top: 0.1px solid black;
+}
+
+main form {
+  display: flex;
+}
+
+main form .orderwrapper {
+  height: 100vh;
+}
+
+main form .orderwrapper section {
+  display: flex;
+  margin-top: 80px;
 }
 
 main .order {
   border-left: 0.1px solid black;
-  border-bottom: 0.1px solid black;
   width: 30%;
+  margin-top: 80px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 
 main .order #customerorder {
-  height: 10%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-size: 30px;
 }
 
-main .order .menusection {
-  display: flex;
-  height: 15%;
-  margin-top: 10px;
-}
-
-main .order .menusection .menuicons {
-  display: flex;
-  flex-direction: column;
-  width: 20%;
-  justify-content: center;
-  align-items: center;
-}
-
-main .order .menusection .menuicons .fa-chevron-up, main .order .menusection .menuicons .fa-chevron-down {
-  margin: 5px 0;
-}
-
-main .order .menusection .menuitem {
-  width: 60%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-main .order .menusection .totalprice {
-  width: 20%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
 main .order .finalprice {
-  height: 20%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -132,14 +116,16 @@ main .order .finalprice {
 }
 
 main .order .finalprice p {
-  height: 30%;
+  margin-top: 30px;
+  font-size: 30px;
 }
 
-main .order .finalprice button {
+main .order .finalprice input {
   height: 50px;
-  width: 150px;
+  width: 200px;
+  margin-top: 40px;
   border-radius: 25px;
   background: none;
-  border: 1px solid black;
+  border: 0.5px solid black;
 }
 /*# sourceMappingURL=style.css.map */

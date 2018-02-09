@@ -22,35 +22,34 @@
   </nav>
 
   <main>
-    <div class="orderwrapper">
-      <section>
-        <div class="amount">
-          <i class="fas fa-chevron-up"></i>
-          <i class="fas fa-chevron-down"></i>
-        </div>
-      <div class="item">
-        <h1>Pasta</h1>
-        <p class="food">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi aliquid molestias maxime sit? Iure, adipisci? Quam ut fugiat, quidem distinctio necessitatibus doloremque illum? Voluptate fugit dignissimos dolores a, hic aliquid?</p>      
-        <p class="price">$50</p>
-      </div>
-    </section>
-
-    <section>
-        <div class="amount">
-          <i class="fas fa-chevron-up"></i>
-          <i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="item">
-          <h1>Pasta</h1>
-          <p class="food">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi aliquid molestias maxime sit? Iure, adipisci? Quam ut fugiat, quidem distinctio necessitatibus doloremque illum? Voluptate fugit dignissimos dolores a, hic aliquid?</p>      
-          <p class="price">$50</p>
-        </div>
-      </section>
-
-      <section>
+    <form action="/test" method="submit">
+      <div class="orderwrapper">
+      <!-- <form action="/test" method="submit"> -->
+        <section>
           <div class="amount">
-            <i class="fas fa-chevron-up"></i>
-            <i class="fas fa-chevron-down"></i>
+            <input type="number" placeholder="Quantity" min="0">
+          </div>
+          <div class="item">
+            <h1>Pasta</h1>
+            <p class="food">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi aliquid molestias maxime sit? Iure, adipisci? Quam ut fugiat, quidem distinctio necessitatibus doloremque illum? Voluptate fugit dignissimos dolores a, hic aliquid?</p>      
+            <p class="price">$50</p>
+          </div>
+        </section>
+
+        <section>
+          <div class="amount">
+            <input type="text" placeholder="Quantity">
+          </div>
+          <div class="item">
+            <h1>Pasta</h1>
+            <p class="food">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi aliquid molestias maxime sit? Iure, adipisci? Quam ut fugiat, quidem distinctio necessitatibus doloremque illum? Voluptate fugit dignissimos dolores a, hic aliquid?</p>      
+            <p class="price">$50</p>
+          </div>
+        </section>
+
+        <section>
+          <div class="amount">
+            <input type="text" placeholder="Quantity">
           </div>
           <div class="item">
             <h1>Pasta</h1>
@@ -60,96 +59,40 @@
         </section>
     
         <section>
-            <div class="amount">
-              <i class="fas fa-chevron-up"></i>
-              <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="item">
-              <h1>Pasta</h1>
-              <p class="food">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi aliquid molestias maxime sit? Iure, adipisci? Quam ut fugiat, quidem distinctio necessitatibus doloremque illum? Voluptate fugit dignissimos dolores a, hic aliquid?</p>      
-              <p class="price">$50</p>
-            </div>
-        </section>
-
-        <section>
           <div class="amount">
-            <i class="fas fa-chevron-up"></i>
-            <i class="fas fa-chevron-down"></i>
+            <input type="text" placeholder="Quantity">
           </div>
           <div class="item">
             <h1>Pasta</h1>
             <p class="food">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi aliquid molestias maxime sit? Iure, adipisci? Quam ut fugiat, quidem distinctio necessitatibus doloremque illum? Voluptate fugit dignissimos dolores a, hic aliquid?</p>      
             <p class="price">$50</p>
           </div>
-      </section>
-    </div>
+        </section>
 
+        <section>
+          <div class="amount">
+            <input type="text" placeholder="Quantity">
+          </div>
+          <div class="item">
+            <h1>Pasta</h1>
+            <p class="food">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi aliquid molestias maxime sit? Iure, adipisci? Quam ut fugiat, quidem distinctio necessitatibus doloremque illum? Voluptate fugit dignissimos dolores a, hic aliquid?</p>      
+            <p class="price">$50</p>
+          </div>
+        </section>
+
+      </div>
+
+    <!---END MAIN-->
       <div class="order">
-        <p id="customerorder">Your order</p>
-        <div class="menusection">
-          
-          <div class="menuicons">
-            <i class="fas fa-chevron-up"></i>
-            <p>1</p>
-            <i class="fas fa-chevron-down"></i>
-          </div>
-        
-          <div class="menuitem">
-            <p>cheese</p>
-            <p>Total: $20</p>
-          </div>
-        
-          <div class="totalprice">
-            <i class="fas fa-trash"></i>                    
-          </div>
-          
+        <p id="customerorder">Your order Total:</p>
+  
+        <div class="finalprice">
+          <p>$60</p>
+          <input type="submit"/>
         </div>
 
-      <div class="menusection">
-        
-        <div class="menuicons">
-          <i class="fas fa-chevron-up"></i>
-          <p>1</p>
-          <i class="fas fa-chevron-down"></i>
-        </div>
-          
-        <div class="menuitem">
-          <p>cheese</p>
-          <p>Total: $20</p>
-        </div>
-          
-        <div class="totalprice">
-          <i class="fas fa-trash"></i>                    
-        </div>
-      
       </div>
-
-      <div class="menusection">
-        
-        <div class="menuicons">
-          <i class="fas fa-chevron-up"></i>
-          <p>1</p>
-          <i class="fas fa-chevron-down"></i>
-        </div>
-            
-        <div class="menuitem">
-          <p>cheese</p>
-          <p>Total: $20</p>
-        </div>
-            
-        <div class="totalprice">
-          <i class="fas fa-trash"></i>                    
-        </div>
-      
-      </div>
-
-      <div class="finalprice">
-        <p>Total: $60</p>
-        <button>Confirm Order</button>
-      </div>
-
-    </div>
-
+    </form> 
   </main>
 
 </body>
