@@ -132,7 +132,9 @@ app.post("/test", (req, res) => {
          body: `OrderId: ${placeOrder_id} PhoneNumber: ${phone}
           Fries: ${item1} Burger: ${item2} Pizza: ${item3} MilkShake: ${item4} Soda: ${item5}`,
        })
-       .then(message => console.log(message.sid));
+       .then(message => console.log(message.sid))
+       // redirect to a confimation page
+       .then( () => res.redirect("/test"));
   });
 });
 
