@@ -87,12 +87,14 @@ app.post("/test", (req, res) => {
   const item3 = orders['3'];
   const item4 = orders['4'];
   const item5 = orders['5'];
+  let phone;
   // Find set customer id
   knex('customer')
-    .select("id")
+    .select("*")
     .from("customer")
     .where('id', 2)
   .then( (customer) => {
+    phone = customer[0].phone;
     let customerid = customer[0].id;
     console.log(customer[0].id);
     return new Promise ( (resolve, reject) => {
@@ -127,22 +129,17 @@ app.post("/test", (req, res) => {
       .create({
          to: '+16477741151',
          from: '+16479313771',
-         body: `OrderId: ${placeOrder_id}
+         body: `OrderId: ${placeOrder_id} PhoneNumber: ${phone}
           Fries: ${item1} Burger: ${item2} Pizza: ${item3} MilkShake: ${item4} Soda: ${item5}`,
        })
        .then(message => console.log(message.sid));
   });
 });
 
-// // Confirm Order Page
-// app.get("/order/confirm", (req, res) => {
-//   res.render("confirm"); // render comirm page
-// });
-
-// //Order Page
-// app.get("/order", (req, res) => {
-//   res.render("order/index");
-// });
+// Confirm page
+app.get("/test", (req, res) => {
+  res.render("confirm"); // render confirm page
+});
 
 app.listen(PORT, () => {
   console.log("Example app listening on port " + PORT);
