@@ -2,7 +2,7 @@
 
 require('dotenv').config();
 
-const PORT        = process.env.PORT || 8080;
+const PORT        = process.env.PORT || 1337;
 const ENV         = process.env.ENV || "development";
 const express     = require("express");
 const bodyParser  = require("body-parser");
@@ -44,23 +44,35 @@ app.post('/sms', (req, res) => {
   const twiml = new MessagingResponse();
   // console.log('body.Body', req.body.Body);
   const message = req.body.Body;
+  console.log('message', message);
   const nums = getIdETA(message);
+  console.log('nums', nums);
   const id = nums[0];
+  console.log('id', id);
   const ETA = nums[1];
+  console.log('eta', ETA);
 
+  knex('placeOrder')
+    .select("*")
+    .from('placeOrder')
+    .where('id', id)
+    .update({status: 'confirmed', eta: ETA})
+  .then( (order) => {
+    console.log(order)
+  })
 
-client.messages
- .create({
-   to: '+16477741151',
-   from: '+16479313771',
-   body: req.body.Body
- })
- .then(message => console.log(message.sid));
+// client.messages
+//  .create({
+//    to: '+16477741151',
+//    from: '+16479313771',
+//    body: req.body.Body
+//  })
+//  .then(message => console.log(message.sid));
 
- twiml.message('Thanks! We will tell the customer');
+//  twiml.message('Thanks! We will tell the customer');
 
- res.writeHead(200, {'Content-Type': 'text/xml'});
- res.end(twiml.toString());
+//  res.writeHead(200, {'Content-Type': 'text/xml'});
+//  res.end(twiml.toString());
 });
 
 
