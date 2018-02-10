@@ -5,26 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  
+  <!-- Stylesheet Ref -->
   <link rel="stylesheet" href="styles/style.css" type="text/css">
+  
+  <!-- Font Awesome -->
   <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
   <title>Order</title>
 </head>
 <body>
     
-  <nav>
+  <nav class="pull-right">
     <h1>Restaurant App</h1>
     <ul>
-      <li>lorem</li>
-      <li>hipster</li>
-      <li>bacon</li>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Order</a></li>
+      <li><a href="#">Status</a></li>
     </ul>
   </nav>
 
   <main>
     <form action="/test" method="submit">
       <div class="orderwrapper">
-      <!-- <form action="/test" method="submit"> -->
+        
         <section>
           <div class="amount">
             <input type="number" placeholder="Quantity" min="0">
@@ -38,7 +44,7 @@
 
         <section>
           <div class="amount">
-            <input type="text" placeholder="Quantity">
+            <input type="text" placeholder="Quantity" min="0">
           </div>
           <div class="item">
             <h1>Pasta</h1>
@@ -49,7 +55,7 @@
 
         <section>
           <div class="amount">
-            <input type="text" placeholder="Quantity">
+            <input type="text" placeholder="Quantity" min="0">
           </div>
           <div class="item">
             <h1>Pasta</h1>
@@ -60,7 +66,7 @@
     
         <section>
           <div class="amount">
-            <input type="text" placeholder="Quantity">
+            <input type="text" placeholder="Quantity" min="0">
           </div>
           <div class="item">
             <h1>Pasta</h1>
@@ -71,7 +77,7 @@
 
         <section>
           <div class="amount">
-            <input type="text" placeholder="Quantity">
+            <input type="text" placeholder="Quantity" min="0">
           </div>
           <div class="item">
             <h1>Pasta</h1>
@@ -84,11 +90,11 @@
 
     <!---END MAIN-->
       <div class="order">
-        <p id="customerorder">Your order Total:</p>
+        <p id="customerorder">Your Order Total:</p>
   
         <div class="finalprice">
           <p>$60</p>
-          <input type="submit"/>
+          <input type="submit" class="btn btn-info" value="Order"/>
         </div>
 
       </div>
