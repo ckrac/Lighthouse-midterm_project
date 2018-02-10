@@ -14,20 +14,12 @@ const knex        = require("knex")(knexConfig[ENV]);
 const morgan      = require('morgan');
 const knexLogger  = require('knex-logger');
 
-//Twilio Setup
+//Twilio Setupß
 const twilioAccount = require("./send_sms.js");
 const accountSid = 'AC84a760b7d1f0d10785b2329131cc8cc9';
 const authToken = '88c07a20c9cc2b2434fe293281f0a852';
-// require the Twilio module and create a REST client
+// require the Twilio module and create a ßREST client
 const client = require('twilio')(accountSid, authToken);
-
-// client.messages
-//  .create({
-//    to: '+16477741151',
-//    from: '+16479313771',
-//    body: 'This is the ship that made the Kessel Run in fourteen parsecs?',
-//  })
-//  .then(message => console.log(message.sid));
 
 // Seperated Routes for each Resource
 const usersRoutes = require("./routes/users");
@@ -143,7 +135,16 @@ app.get("/test", (req, res) => {
   res.render("confirm"); // render confirm page
 });
 
-//
+// Restaurants Submit page
+app.get("/restaurant", (req, res) => {
+  res.render("restaurant"); // render confirm page
+});
+
+app.post("/restaurant", (req, res) => {
+  const a = req.body;
+  // console.log('a', a)
+});
+
 
 app.listen(PORT, () => {
   console.log("Example app listening on port " + PORT);

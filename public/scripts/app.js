@@ -10,28 +10,18 @@
 //     }
 //   });;
 
-  // $.ajax({
-  //   method: "GET",
-  //   url: "/api/menu"
-  // }).done((menu) => {
-  //   for(item of menu) {
-  //     console.log(item);
-  //   }
-  // });;
-// });
 
 const createMenuItem = (menuObj) => {
 
   let $menuItem = $(`
-    <section>
-        <div class="amount">
-          <i class="fas fa-chevron-up"></i>
-          <i class="fas fa-chevron-down"></i>
-        </div>
+    <section data-itemid="${menuObj.id}">
+      <div class="amount">
+        <input type="number" placeholder="Quantity" min="0" name="${menuObj.id}">
+      </div>
       <div class="item">
         <h1>${menuObj.name}</h1>
         <p class="food">${menuObj.description}</p>
-        <p class="price">${menuObj.price}</p>
+        <p class="price" data-price"${menuObj.price}">${menuObj.price}</p>
       </div>
     </section>
   `)
@@ -47,16 +37,6 @@ const createMenuItem = (menuObj) => {
       $('.orderwrapper').append($menuItem);
     }
   }
-
-  // $.ajax({
-  //   method: "GET",
-  //   url: "/api/menu"
-  // }).done((menu) => {
-  //   // for(item of menu) {
-  //   //   console.log(item);
-  //   // }
-  //   renderMenu(menu);
-  // });;
 
   const loadMenu = () => {
     $.ajax({
@@ -74,7 +54,12 @@ const createMenuItem = (menuObj) => {
 
 loadMenu();
 
-// $('main').on('click', function (e) {
-//   console.log(e)
-// })
+console.log('hey')
+let counter = 0;
+$('.orderwrapper').on('click', '.down', function(e) {
+  console.log('clicked')
+  counter++;
+  $(this).closest('span').text(counter);
+})
+
 
