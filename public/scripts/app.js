@@ -21,7 +21,7 @@ const createMenuItem = (menuObj) => {
       <div class="item">
         <h1>${menuObj.name}</h1>
         <p class="food">${menuObj.description}</p>
-        <p class="price" data-price"${menuObj.price}">${menuObj.price}</p>
+        <p class="price" data-price="${menuObj.price}">${menuObj.price}</p>
       </div>
     </section>
   `)
