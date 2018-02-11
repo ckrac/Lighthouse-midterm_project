@@ -31,8 +31,6 @@ const placeOrderRoutes = require("./routes/3placeOrder");
 //         The :status token will be colored red for server error codes, yellow for client error codes, cyan for redirection codes, and uncolored for all other codes.
 app.use(morgan('dev'));
 
-
-
 // Log knex SQL queries to STDOUT as well
 app.use(knexLogger(knex));
 
@@ -67,10 +65,8 @@ app.post("/order", (req, res) => {
   res.render("order"); //
 });
 
-
 app.post("/test", (req, res) => {
   const orders = req.body;
-  console.log(orders);
   // Set known menu items to quantity
   const item1 = orders['1'];
   const item2 = orders['2'];
@@ -87,7 +83,6 @@ app.post("/test", (req, res) => {
   .then( (customer) => {
     phone = customer[0].phone;
     let customerid = customer[0].id;
-    console.log(customer[0].id);
     return new Promise ( (resolve, reject) => {
       if (!customerid) {
         reject ();
@@ -104,7 +99,6 @@ app.post("/test", (req, res) => {
     })
   })
   .then ( (placeOrderID) => {
-    console.log(placeOrderID);
     knex('orderList')
       .insert([{placeOrder_id: placeOrderID, menu_id: 1, quantity: item1},
         {placeOrder_id: placeOrderID, menu_id: 2, quantity: item2},
@@ -115,8 +109,8 @@ app.post("/test", (req, res) => {
     return placeOrderID
   })
   .then ( (placeOrder_id) => {
-    console.log('end', placeOrder_id);
     orderID = placeOrder_id;
+
     client.messages
       .create({
          to: '+14163015829',
@@ -138,7 +132,6 @@ app.get("/test/:id", (req, res) => {
 // Query db based order id
 app.get("/query/:id", (req, res) => {
   const uid = req.params.id;
-  console.log('heeeeeeeeyyyyyyyyyyyyy', uid);
     knex
       .select('*')
       .from('placeOrder')

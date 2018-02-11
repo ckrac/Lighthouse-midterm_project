@@ -24,6 +24,7 @@ app.use(morgan('dev'));
 // Log knex SQL queries to STDOUT as well
 app.use(knexLogger(knex));
 
+// twilio user id. change with your acc
 const accountSid = 'AC37d99d897e82e4af250ab4c524e947a4';
 const authToken = '0e6998f048e470c89bd22525bf9f7026';
 const client = require('twilio')(accountSid, authToken);
@@ -44,13 +45,9 @@ app.post('/sms', (req, res) => {
   const twiml = new MessagingResponse();
   // console.log('body.Body', req.body.Body);
   const message = req.body.Body;
-  console.log('message', message);
   const nums = getIdETA(message);
-  console.log('nums', nums);
   const id = nums[0];
-  console.log('id', id);
   const ETA = nums[1];
-  console.log('eta', ETA);
 
   knex('placeOrder')
     .select("*")
@@ -58,21 +55,20 @@ app.post('/sms', (req, res) => {
     .where('id', id)
     .update({status: 'confirmed', eta: ETA})
   .then( (order) => {
-    console.log(order)
   })
 
-client.messages
- .create({
-   to: '+14163015829',
-   from: '+16479332589',
-   body: req.body.Body
- })
- .then(message => console.log(message.sid));
+  client.messages
+   .create({
+     to: '+14163015829',
+     from: '+16479332589',
+     body: req.body.Body
+   })
+   .then(message => console.log(message.sid));
 
- twiml.message('Thanks! We will tell the customer');
+   twiml.message('Thanks! We will tell the customer');
 
- res.writeHead(200, {'Content-Type': 'text/xml'});
- res.end(twiml.toString());
+   res.writeHead(200, {'Content-Type': 'text/xml'});
+   res.end(twiml.toString());
 });
 
 
