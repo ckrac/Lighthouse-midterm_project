@@ -12,18 +12,18 @@ $( document ).ready(function() {
 
           $.ajax({
               type: "GET",
-              url: `/query/${id}`, // You add the id of the post and the update datetime to the url as well
+              url: `/query/${id}`, //
               success: function(response) {
-                // console.log('response', response);
-                  // If not false, update the post
-                  if (response) {
-                      console.log('response', response)
-                      // console.log('uid', uid)
-                      // check database if id
+                console.log('response', response);
+                const status = response[0].status;
+                const eta = response[0].eta;
 
-                      // Update the h2 with the new title from the post
-                      console.log('id', id)
-                              // $("h3").text(response.body.Body);
+                console.log('status', status);
+                console.log('etaaa', eta);
+                  // If not false, update the page
+                  if (status === 'confirmed') {
+                    console.log('here')
+                    $("h3").text(`Your order will be ready for pick up in ${eta} minutes.`);
                   }
               }
           });
