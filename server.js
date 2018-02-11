@@ -22,7 +22,6 @@ const authToken = '0e6998f048e470c89bd22525bf9f7026';
 const client = require('twilio')(accountSid, authToken);
 
 // Seperated Routes for each Resource
-const usersRoutes = require("./routes/users");
 const menuRoutes = require("./routes/1menu");
 const placeOrderRoutes = require("./routes/3placeOrder");
 
@@ -45,7 +44,6 @@ app.use("/styles", sass({
 app.use(express.static("public"));
 
 // Mount all resource routes
-app.use("/api/users", usersRoutes(knex));
 app.use("/api/menu", menuRoutes(knex));
 app.use("/api/placeOrder", placeOrderRoutes(knex));
 
