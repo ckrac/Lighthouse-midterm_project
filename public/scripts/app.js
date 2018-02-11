@@ -1,16 +1,4 @@
 
-
-// $(() => {
-//   $.ajax({
-//     method: "GET",
-//     url: "/api/users"
-//   }).done((users) => {
-//     for(user of users) {
-//       $("<div>").text(user.name).appendTo($("body"));
-//     }
-//   });;
-
-
 const createMenuItem = (menuObj) => {
 
   let $menuItem = $(`
@@ -52,14 +40,39 @@ const createMenuItem = (menuObj) => {
   });
 }
 
+
+var order = {};
+
+totalOrder = function(){
+
+ var total = 0;
+ for(var a in order){
+   total += order[a];
+ }
+
+ $('.finalprice p').text('$' + total);
+
+}
+
+$(document).ready(function() {
+
+
+
+ $('input').on('keyup', function() {
+
+     var $section = $(this).closest('section');
+     var id = $section.attr('data-itemid');
+     var input = $section.find('.amount input').val();
+     var price = $section.find('.price').text();
+     order['menuItem_'+id] = input*price;
+     totalOrder();
+
+ });
+
+})
+
+
 loadMenu();
 
-console.log('hey')
-let counter = 0;
-$('.orderwrapper').on('click', '.down', function(e) {
-  console.log('clicked')
-  counter++;
-  $(this).closest('span').text(counter);
-})
 
 
