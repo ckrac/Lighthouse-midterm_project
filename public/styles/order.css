@@ -1,14 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Dosis:300,400");
 @import url("https://fonts.googleapis.com/css?family=Quicksand");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  list-style: none;
-  font-family: 'Quicksand', sans-serif;
-  text-decoration: none;
-}
-
 body {
   margin: 0 100px;
 }
@@ -39,11 +29,11 @@ nav ul li {
 }
 
 nav ul li:hover {
-  border-bottom: 0.1px solid #74b9ff;
+  border-bottom: 0.1px solid black;
 }
 
 nav ul li:nth-child(2) {
-  border-bottom: 0.1px solid #74b9ff;
+  border-bottom: 0.1px solid black;
 }
 
 nav ul a {
@@ -53,7 +43,7 @@ nav ul a {
 
 nav ul a:hover {
   text-decoration: none;
-  color: #74b9ff;
+  color: black;
 }
 
 .amount {
@@ -74,7 +64,7 @@ input {
 
 input:focus {
   outline: none;
-  border: 0.5px solid #74b9ff;
+  border: 1px solid black;
 }
 
 ::placeholder {
@@ -98,7 +88,7 @@ input:focus {
 }
 
 .price {
-  font-size: 20px;
+  font-size: 25px;
 }
 
 main {
@@ -130,7 +120,7 @@ main .order {
   justify-content: center;
 }
 
-main .order #customerorder {
+main .order .customerorder {
   font-size: 30px;
 }
 
@@ -150,4 +140,4 @@ main .order .finalprice input {
   margin-top: 40px;
   border-radius: 25px;
 }
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=order.css.map */
