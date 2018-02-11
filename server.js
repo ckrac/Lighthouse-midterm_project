@@ -16,17 +16,15 @@ const knexLogger  = require('knex-logger');
 
 //Twilio Setupß
 const twilioAccount = require("./send_sms.js");
-const accountSid = 'AC84a760b7d1f0d10785b2329131cc8cc9';
-const authToken = '88c07a20c9cc2b2434fe293281f0a852';
+const accountSid = 'AC37d99d897e82e4af250ab4c524e947a4';
+const authToken = '0e6998f048e470c89bd22525bf9f7026';
 // require the Twilio module and create a ßREST client
 const client = require('twilio')(accountSid, authToken);
 
 // Seperated Routes for each Resource
 const usersRoutes = require("./routes/users");
 const menuRoutes = require("./routes/1menu");
-// const customerRoutes = require("./routes/customer");
-// const placeOrderRoutes = require("./routes/placeOrder");
-// const orderListRoutes = require("./routes/orderList");
+const placeOrderRoutes = require("./routes/3placeOrder");
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.
@@ -49,9 +47,7 @@ app.use(express.static("public"));
 // Mount all resource routes
 app.use("/api/users", usersRoutes(knex));
 app.use("/api/menu", menuRoutes(knex));
-// app.use("/api/customer", customerRoutes(knex));
-// app.use("/api/placeOrder", placeOrderRoutes(knex));
-// app.use("/api/orderList", orderListRoutes(knex));
+app.use("/api/placeOrder", placeOrderRoutes(knex));
 
 // Home page
 app.get("/", (req, res) => {
@@ -80,6 +76,7 @@ app.post("/test", (req, res) => {
   const item4 = orders['4'];
   const item5 = orders['5'];
   let phone;
+  let orderID;
   // Find set customer id
   knex('customer')
     .select("*")
@@ -95,7 +92,7 @@ app.post("/test", (req, res) => {
       } else {
         // insert a new placeOrder id using customers id
         knex('placeOrder')
-          .insert({customer_id: customerid})
+          .insert({customer_id: customerid, status: "un_confirmed"})
           .returning('id')
           .then( (placeOrderID) => {
             // console.log(placeOrderID[0]);
@@ -117,34 +114,26 @@ app.post("/test", (req, res) => {
   })
   .then ( (placeOrder_id) => {
     console.log('end', placeOrder_id);
+    orderID = placeOrder_id;
     client.messages
       .create({
-         to: '+16477741151',
-         from: '+16479313771',
+         to: '+14163015829',
+         from: '+16479332589',
          body: `OrderId: ${placeOrder_id} PhoneNumber: ${phone}
           Fries: ${item1} Burger: ${item2} Pizza: ${item3} MilkShake: ${item4} Soda: ${item5}`,
        })
        .then(message => console.log(message.sid))
        // redirect to a confimation page
-       .then( () => res.redirect("/test"));
+       .then( () => res.redirect(`/test/${orderID}`));
   });
 });
 
 // Confirm page
-app.get("/test", (req, res) => {
+app.get("/test/:id", (req, res) => {
+  const uid = req.params.id;
+  console.log('heeeeeeeeyyyyyyyyyyyyy', uid);
   res.render("confirm"); // render confirm page
 });
-
-// Restaurants Submit page
-app.get("/restaurant", (req, res) => {
-  res.render("restaurant"); // render confirm page
-});
-
-app.post("/restaurant", (req, res) => {
-  const a = req.body;
-  // console.log('a', a)
-});
-
 
 app.listen(PORT, () => {
   console.log("Example app listening on port " + PORT);
