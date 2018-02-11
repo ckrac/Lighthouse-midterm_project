@@ -52,8 +52,8 @@ app.use("/api/menu", menuRoutes(knex));
 app.use("/api/placeOrder", placeOrderRoutes(knex));
 
 // Home page
-app.get("/", (req, res) => {
-  res.render("index");
+app.get("/zebra", (req, res) => {
+  res.render("home");
 });
 
 // Order Page
