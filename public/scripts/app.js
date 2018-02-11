@@ -1,4 +1,4 @@
-
+// creates a template for each menu item
 const createMenuItem = (menuObj) => {
 
   let $menuItem = $(`
@@ -16,6 +16,7 @@ const createMenuItem = (menuObj) => {
   return $menuItem;
 }
 
+// renders orderpage with items from db
   const renderMenu = (menu) => {
   // loops through menu list
     for (let item of menu) {
@@ -26,51 +27,44 @@ const createMenuItem = (menuObj) => {
     }
   }
 
+// Loops through db to render orderpage and load it
   const loadMenu = () => {
     $.ajax({
     method: "GET",
     url: "/api/menu",
     success: function (moreMenu) {
-      for(item of moreMenu) {
-        console.log(item);
-      }
-      console.log(moreMenu);
       renderMenu(moreMenu);
     }
   });
 }
 
+// Function to sum order total
+let order = {};
 
-var order = {};
+const totalOrder = () => {
 
-totalOrder = function(){
-
- var total = 0;
- for(var a in order){
-   total += order[a];
- }
-
- $('.finalprice p').text('$' + total);
+  let total = 0;
+  for(let a in order){
+    total += order[a];
+  }
+  $('.finalprice p').text('$' + total);
 
 }
 
 $(document).ready(function() {
 
-
-
  $('input').on('keyup', function() {
 
-     var $section = $(this).closest('section');
-     var id = $section.attr('data-itemid');
-     var input = $section.find('.amount input').val();
-     var price = $section.find('.price').text();
+     const $section = $(this).closest('section');
+     const id = $section.attr('data-itemid');
+     const input = $section.find('.amount input').val();
+     const price = $section.find('.price').text();
      order['menuItem_'+id] = input*price;
      totalOrder();
 
  });
 
 })
-
 
 loadMenu();
 
