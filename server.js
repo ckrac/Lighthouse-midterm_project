@@ -31,6 +31,8 @@ const placeOrderRoutes = require("./routes/3placeOrder");
 //         The :status token will be colored red for server error codes, yellow for client error codes, cyan for redirection codes, and uncolored for all other codes.
 app.use(morgan('dev'));
 
+
+
 // Log knex SQL queries to STDOUT as well
 app.use(knexLogger(knex));
 
@@ -130,10 +132,22 @@ app.post("/test", (req, res) => {
 
 // Confirm page
 app.get("/test/:id", (req, res) => {
-  const uid = req.params.id;
-  console.log('heeeeeeeeyyyyyyyyyyyyy', uid);
   res.render("confirm"); // render confirm page
 });
+
+// Query db based order id
+app.get("/query/:id", (req, res) => {
+  const uid = req.params.id;
+  console.log('heeeeeeeeyyyyyyyyyyyyy', uid);
+    knex
+      .select('*')
+      .from('placeOrder')
+      .where('id', uid)
+      .then((results) => {
+        res.json(results);
+    });
+});
+
 
 app.listen(PORT, () => {
   console.log("Example app listening on port " + PORT);

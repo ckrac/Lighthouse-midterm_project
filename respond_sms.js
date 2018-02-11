@@ -24,8 +24,8 @@ app.use(morgan('dev'));
 // Log knex SQL queries to STDOUT as well
 app.use(knexLogger(knex));
 
-const accountSid = 'AC84a760b7d1f0d10785b2329131cc8cc9';
-const authToken = '88c07a20c9cc2b2434fe293281f0a852';
+const accountSid = 'AC37d99d897e82e4af250ab4c524e947a4';
+const authToken = '0e6998f048e470c89bd22525bf9f7026';
 const client = require('twilio')(accountSid, authToken);
 
 const http = require('http');
@@ -61,18 +61,18 @@ app.post('/sms', (req, res) => {
     console.log(order)
   })
 
-// client.messages
-//  .create({
-//    to: '+16477741151',
-//    from: '+16479313771',
-//    body: req.body.Body
-//  })
-//  .then(message => console.log(message.sid));
+client.messages
+ .create({
+   to: '+14163015829',
+   from: '+16479332589',
+   body: req.body.Body
+ })
+ .then(message => console.log(message.sid));
 
-//  twiml.message('Thanks! We will tell the customer');
+ twiml.message('Thanks! We will tell the customer');
 
-//  res.writeHead(200, {'Content-Type': 'text/xml'});
-//  res.end(twiml.toString());
+ res.writeHead(200, {'Content-Type': 'text/xml'});
+ res.end(twiml.toString());
 });
 
 

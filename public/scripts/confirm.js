@@ -1,23 +1,35 @@
+
 $( document ).ready(function() {
 
+  console.log('hey')
 
+  function updatePost() {
+      setInterval(function() {
 
+          const url = window.location.pathname;
+          const id = url.substring(url.lastIndexOf('/') + 1);
+          console.log(id);
 
-  // });
-  // console.log('hey')
-  $('.submit').on('click', function (e) {
-    console.log(e.val())
-    // console.log('click')
-    // console.log($(this))
-    $.ajax({
-      url: '/restaurant',
-      method: 'POST',
-      success: function (data) {
-  //         //render home page ejs wbilepassing in a variable
-        console.log('ajax')
-      }
-    });
+          $.ajax({
+              type: "GET",
+              url: `/query/${id}`, // You add the id of the post and the update datetime to the url as well
+              success: function(response) {
+                // console.log('response', response);
+                  // If not false, update the post
+                  if (response) {
+                      console.log('response', response)
+                      // console.log('uid', uid)
+                      // check database if id
 
-  });
+                      // Update the h2 with the new title from the post
+                      console.log('id', id)
+                              // $("h3").text(response.body.Body);
+                  }
+              }
+          });
+      }, 5000); // Do this every 5 seconds
+  }
+
+  updatePost();
 
 });
