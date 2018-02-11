@@ -1,7 +1,16 @@
-body {
-  background-color: #EEE;
+html {
+  box-sizing: border-box;
 }
 
-body h1 {
-  color: #244751;
+*, *:before, *:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
 }
+
+body {
+  font-family: 'Quicksand', sans-serif;
+}
+/*# sourceMappingURL=layout.css.map */

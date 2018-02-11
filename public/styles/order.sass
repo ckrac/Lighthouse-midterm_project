@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand')
+
+body
+	margin: 0 100px
+
+nav
+	width: 100%
+	height: 100px
+	// background: red
+	display: flex
+	align-items: center
+
+	h1
+		// background: blue
+		width: 50vw
+		font-size: 30px
+
+	ul
+		// background: yellow
+		width: 50vw
+		display: flex
+		justify-content: flex-end
+
+		li
+			padding: 0 15px
+			margin: 0 10px
+			font-size: 20px
+			padding-bottom: 5px
+			// background: blue
+
+			&:hover
+				border-bottom: 0.1px solid black
+
+		li:nth-child(2)
+			// background: blue
+			border-bottom: 0.1px solid black
+
+		a
+			color: black
+			text-decoration: none
+
+			&:hover
+				text-decoration: none
+				color: black
+
+//Main Menu -----------------------------------
+
+.amount
+	width: 30%
+	// background: cyan
+	display: flex
+	flex-direction: column
+	align-items: center
+	justify-content: center
+
+input
+	height: 50px
+	width: 200px
+	border-radius: 25px
+	border: 0.5px solid black
+	background: none
+
+	&:focus
+		outline: none
+		border: 1px solid black
+
+::placeholder
+	font-size: 15px
+	padding: 10px
+	color: black
+
+.item
+	// background: green
+	padding: 0 150px
+	text-align: center
+	display: flex
+	flex-direction: column
+	align-items: center
+	justify-content: center
+	height: 150px
+
+.food
+	margin: 10px 0
+
+.price
+	font-size: 25px
+
+main
+	// background: blue
+	display: flex
+	height: 80vh
+	border-top: 0.1px solid black
+
+
+	form
+		// background: pink
+		display: flex
+
+		.orderwrapper
+			// background: red
+			height: 100vh
+
+			section
+				display: flex
+				margin-top: 80px
+				// background: magenta
+		
+	.order
+		// background: orange
+		border: 0.1px solid black
+		width: 30%
+		margin-top: 80px
+		display: flex
+		align-items: center
+		flex-direction: column
+		justify-content: center
+
+		.customerorder
+			font-size: 30px
+
+		.finalprice
+			// background: yellow
+			display: flex
+			flex-direction: column
+			justify-content: center
+			align-items: center
+
+			p
+				margin-top: 30px
+				font-size: 30px
+			
+			input
+				margin-top: 40px
+				border-radius: 25px
+
+//---------------------------------------------
+
+
