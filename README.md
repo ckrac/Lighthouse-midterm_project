@@ -5,8 +5,8 @@ Welcome to our food pick up ordering app. Once the user selects his/her items fr
 
 ## Screenshots
 
-
-
+!["Home page"](https://github.com/ckrac/midterm_project/blob/code/cleanup/docs/HomePage.png?raw=true)
+!["Order page"](https://github.com/ckrac/midterm_project/blob/code/cleanup/docs/OrderPage.png?raw=true)
 
 
 ## Getting Started
