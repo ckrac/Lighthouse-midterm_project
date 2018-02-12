@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Quicksand");
 body {
-  margin: 0 100px;
+  margin: 0 70px;
 }
 
 nav {
@@ -8,11 +8,15 @@ nav {
   height: 100px;
   display: flex;
   align-items: center;
+  border-left: 0.1px solid black;
+  border-right: 0.1px solid black;
+  margin-top: 20px;
 }
 
 nav h1 {
   width: 50vw;
   font-size: 30px;
+  padding-left: 15px;
 }
 
 nav ul {
@@ -60,6 +64,7 @@ input {
   border-radius: 25px;
   border: 0.5px solid black;
   background: none;
+  text-align: center;
 }
 
 input:focus {
@@ -67,9 +72,13 @@ input:focus {
   border: 1px solid black;
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
 ::placeholder {
   font-size: 15px;
-  padding: 10px;
   color: black;
 }
 
@@ -100,6 +109,7 @@ main {
 
 main form {
   display: flex;
+  width: 100%;
 }
 
 main form .orderwrapper {
@@ -112,7 +122,8 @@ main form .orderwrapper section {
 }
 
 main .order {
-  border: 0.1px solid black;
+  border-top: 0.1px solid black;
+  border-left: 0.1px solid black;
   width: 30%;
   margin-top: 80px;
   display: flex;

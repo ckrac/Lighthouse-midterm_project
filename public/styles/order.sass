@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand')
 
 body
-	margin: 0 100px
+	margin: 0 70px
 
 //Nav -----------------------------------------
 
@@ -10,10 +10,14 @@ nav
 	height: 100px
 	display: flex
 	align-items: center
+	border-left: 0.1px solid black
+	border-right: 0.1px solid black	
+	margin-top: 20px
 
 	h1
 		width: 50vw
 		font-size: 30px
+		padding-left: 15px
 
 	ul
 		width: 50vw
@@ -57,14 +61,18 @@ input
 	border-radius: 25px
 	border: 0.5px solid black
 	background: none
+	text-align: center
 
 	&:focus
 		outline: none
 		border: 1px solid black
 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button
+  -webkit-appearance: none 
+
 ::placeholder
 	font-size: 15px
-	padding: 10px
 	color: black
 
 .item
@@ -88,9 +96,9 @@ main
 	height: 80vh
 	border-top: 0.1px solid black
 
-
 	form
 		display: flex
+		width: 100%
 
 		.orderwrapper
 			height: 100vh
@@ -100,7 +108,8 @@ main
 				margin-top: 80px
 		
 	.order
-		border: 0.1px solid black
+		border-top: 0.1px solid black
+		border-left: 0.1px solid black		
 		width: 30%
 		margin-top: 80px
 		display: flex
