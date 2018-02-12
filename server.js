@@ -113,8 +113,14 @@ app.post("/test", (req, res) => {
       .create({
          to: '+14163015829',
          from: '+16479332589',
-         body: `OrderId: ${placeOrder_id} PhoneNumber: ${phone}
-          Fries: ${item1} Burger: ${item2} Pizza: ${item3} MilkShake: ${item4} Soda: ${item5}`,
+         body: `
+          OrderId: ${placeOrder_id}
+          PhoneNumber: ${phone}
+          Fries: ${item2}
+          Burger: ${item1}
+          Pizza: ${item3}
+          MilkShake: ${item4}
+          Soda: ${item5}`,
        })
        .then(message => console.log(message.sid))
        // redirect to a confimation page
